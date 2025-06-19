@@ -1,0 +1,86 @@
+html, #root {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sin fondo en body */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+/* Contenedor principal con fondo adaptado */
+.login-page-wrapper {
+    background-image: url("/assets/FONDO1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: white;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Centrado horizontal */
+    justify-content: flex-start; /* Alineado arriba */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Contenedor interior (cuadro blanco) */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    padding-bottom: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Bloque del logo + títulos */
+.logo-header-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Imagen centrada */
+.logo-header-box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    max-width: 250px;
+}
+
+/* Estilo para el grid de equipos */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilo individual de cada tarjeta */
+.team-card {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    width: 150px;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
