@@ -1,17 +1,16 @@
-# Usa una imagen oficial con Python 3.11
 FROM python:3.11-slim
 
-# Crea directorio para la app
 WORKDIR /app
 
-# Copia los archivos del proyecto
 COPY . /app
 
-# Instala las dependencias
+# Instalar dependencias del sistema necesarias para pandas, plotly, etc.
+RUN apt-get update && apt-get install -y build-essential gcc g++ libpq-dev curl
+
+# Instalar dependencias de Python
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expón el puerto por defecto de Dash
 EXPOSE 8050
 
-# Comando para ejecutar la app
 CMD ["python", "app.py"]
