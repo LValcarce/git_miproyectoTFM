@@ -1,7 +1,8 @@
 services:
   - type: web
-    name: tfm-champions-app
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    name: dash-champions-app
+    env: docker
+    plan: free
+    branch: main
+
    
