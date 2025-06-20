@@ -21,3 +21,4 @@ kaleido==0.2.1
 reportlab==4.1.0
 dash-bootstrap-components==1.6.0
 gunicorn==21.2.0
+pandas==2.2.2
