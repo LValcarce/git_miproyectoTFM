@@ -27,21 +27,24 @@ def layout():
 
     for _, row in equipos.iterrows():
         tarjeta = dbc.Card([
-            dbc.CardImg(src=row["logo"], top=True, style={"height": "100px", "object-fit": "contain", "padding": "10px"}),
+            dbc.CardImg(src=row["logo"], top=True, className="img-fluid p-2", style={"height": "100px", "objectFit": "contain"}),
             dbc.CardBody([
                 html.H5(row["team"], className="card-title text-center"),
                 html.P(row["country"], className="card-text text-center"),
             ]),
             dbc.CardFooter(
-                dbc.Button("Ver plantilla", href=f"/teams/{row['team_id']}", color="primary", style={"width": "100%"})
+                dbc.Button("Ver plantilla", href=f"/teams/{row['team_id']}", color="primary", className="w-100")
             )
-        ], style={"width": "12rem", "margin": "10px"})
+        ], className="h-100 shadow-sm")
+
         tarjetas.append(tarjeta)
 
-    tarjetas_distribuidas = html.Div(
-        [dbc.Row([dbc.Col(card, width=2) for card in tarjetas[i:i+6]], justify="center")
-         for i in range(0, len(tarjetas), 6)]
-    )
+    tarjetas_distribuidas = dbc.Container([
+        dbc.Row([
+           dbc.Col(card, xs=12, sm=6, md=4, lg=3, xl=2, className="mb-4") for card in tarjetas
+        ])
+    ], fluid=True)
+    
 
     return html.Div([
         navbar,
